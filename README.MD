@@ -1,7 +1,7 @@
-<p align"center">
+<p align="center">
   <a href="https://hutasker.netlify.app">
     <img width="120" src="https://github.com/AdamXweb/HuTasker/blob/main/static/logo-hutasker.png?raw=true">
-    <h1>HuTasker</h1>
+    <h1 align="center">HuTasker</h1>
   </a>
 </p>
 
