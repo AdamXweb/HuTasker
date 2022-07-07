@@ -1,4 +1,4 @@
-baseurl = "https://adam.kostarelas.com/HuTasker"
+baseurl = "/"
 canonifyURLs = false
 
 disableKinds = ["sitemap"]
