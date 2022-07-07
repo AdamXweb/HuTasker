@@ -1,0 +1,21 @@
+<footer class="footer text-muted  {{ if and .IsHome .Site.Params.alert }}alert-footer{{end}}">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 order-last order-lg-first">
+          <ul class="list-inline">
+            <li class="list-inline-item">{{ .Site.Params.footer | safeHTML }}</li>
+          </ul>
+        </div>
+        <div class="col-lg-8 order-first text-lg-end">
+          <a href="https://github.com/AdamXweb/HuTasker/blob/main/CHANGELOG.md">{{/*  {{ $data := getJSON "https://raw.githubusercontent.com/adamxweb/hutasker/master/package.json" }}{{ $data.version }}  */}}</a>
+        </div>
+        <div class="w100 text-center">
+          <ul class="list-inline">
+            {{ range .Site.Menus.footer -}}
+              <li class="list-inline-item"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+            {{ end -}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>

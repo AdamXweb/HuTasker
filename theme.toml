@@ -1,0 +1,41 @@
+name = "HuTasker"
+license = "MIT"
+licenselink = "https://github.com/adamxweb/HuTasker/blob/master/LICENSE"
+description = "Integration example with AirTable looking like a task app"
+
+homepage = "https://github.com/adamxweb/HuTasker"
+demosite = "https://adamxweb.github.io/HuTasker"
+tags = [
+  "responsive",
+  "simple",
+  "clean",
+  "light",
+  "dark",
+  "blog",
+  "minimalist",
+  "search"
+]
+features = [
+  "responsive",
+  "single-column",
+  "blog",
+  "cover-image",
+  "table-of-contents",
+  "opengraph",
+  "favicon",
+  "archive",
+  "share-icons",
+  "cover",
+  "multilingual",
+  "social-icons",
+  "minified-assets",
+  "theme-toggle",
+  "menu-location-indicator",
+  "scroll-to-top",
+  "search"
+]
+min_version = "0.83.0"
+
+[author]
+  name = "Adam Kostarelas"
+  homepage = "https://github.com/adamxweb/"

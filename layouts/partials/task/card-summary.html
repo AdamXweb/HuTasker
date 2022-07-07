@@ -1,0 +1,21 @@
+{{ with .Site.Params.taskData}}
+    {{$url := .}}
+    {{$data := getJSON $url}}
+    {{range $data}}
+    <div class="card">
+       <img src="" class="card-img-top">   
+
+    <div class="card-body">
+        <h2>{{.TaskName}}</h2>
+        <p class="card-text">
+            <ul>
+                <li>{{.Location}}</li>
+                <li>{{.DateForCompletion}}</li>
+            </ul>
+        </p>
+        <span class="badge badge-primary">{{.Status}}</span>
+    </div>
+    <h3>{{.Budget}}</h3>
+    </div>
+    {{end}}
+{{end}}

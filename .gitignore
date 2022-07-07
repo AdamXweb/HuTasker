@@ -1,0 +1,7 @@
+node_modules
+env.py
+resources
+bin
+.DS_Store
+package-lock.json
+.hugo_build.lock

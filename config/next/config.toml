@@ -1,0 +1,4 @@
+baseurl = "/"
+canonifyURLs = false
+
+disableKinds = ["sitemap"]

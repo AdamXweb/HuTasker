@@ -1,0 +1,31 @@
+{{ define "main" }}
+<link rel="stylesheet" href="{{.Site.BaseURL}}/more.css">
+
+<div class="row justify-content-center">
+	<div class="col-lg-5 col-xl-4">
+		<nav class="docs-links" aria-label="Main navigation">
+			{{ partial "task/card-detail.html" .}}
+
+		</nav>
+	</div>
+  <div class="col-md-12 col-lg-10 col-xl-8">
+	  		{{ if .Site.Params.options.breadCrumb -}}
+			<!-- https://discourse.gohugo.io/t/breadcrumb-navigation-for-highly-nested-content/27359/6 -->
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					{{ partial "main/breadcrumb" . -}}
+					<li class="breadcrumb-item active" aria-current="page">{{ .Title }}</li>
+				</ol>
+			</nav>
+		{{ end }}
+    <article>
+      <h1 class="text-center">{{ .Title }}</h1>
+	  <p class="text-center"> {{ .Description }}</p>
+	  {{/*  {{ partial "task/card-summary.html" .}}  */}}
+
+      <div class="text-center">{{ .Content }}</div>
+			
+    </article>
+  </div>
+</div>
+{{ end }}

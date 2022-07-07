@@ -1,0 +1,50 @@
+
+  {{ define "hero" }}
+  {{$url := .Site.Params.taskData}}
+{{$data := getJSON $url}}
+<section class="section container-fluid mt-n3 pb-0 HeroBanner">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6 col-xl-6  text-left ">
+      <h1 class="mt-0 homeH1">{{ .Title }}</h1>
+      <p class="lead">{{ .Params.lead | safeHTML }}</p>
+      <a class="btn btn-primary btn-lg px-4 mb-2" href="{{ .Site.Params.RepoWiki }}" role="button">Read Docs</a>
+      <a class="btn btn-secondary btn-lg px-4 mb-2 position-relative" href="{{ "tasks" | relURL }}" role="button">View Tasks
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger unreadTask">
+          {{len $data}}+
+          <span class="visually-hidden">unread messages</span>
+        </span>
+      
+    </a>
+      <p class="meta">Open-source <a href="{{.Site.Params.RepoLicense}}">MIT</a> Licensed. <a href="{{.Site.Params.RepoURL}}">View on Github</a></p>
+    </div>
+    <div class="col-md-4 col-lg-6 col-xl-8 text-left">
+      <img class="homevector" src="images/vectorH.svg">
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ define "task-lists" }}
+<section class="section section-sm">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      {{range .Params.test}}
+      <div class="col-lg-5">
+        <h2 class="h4">{{.title}}</h2>
+        <p>{{.p}}</p>
+      </div>
+      {{end}}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ define "task-reviews" }}
+<section class="section section-sm container-fluid">
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-9">
+      {{/*  This will contain a range from the json  */}}
+    </div>
+  </div>
+</section>
+{{ end }}

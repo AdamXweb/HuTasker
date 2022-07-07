@@ -1,0 +1,4 @@
+baseurl = "https://adam.kostarelas.com/HuTasker"
+canonifyURLs = false
+
+disableKinds = ["sitemap"]

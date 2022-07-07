@@ -1,0 +1,156 @@
+.docs-content > h2[id]::before,
+.docs-content > h3[id]::before,
+.docs-content > h4[id]::before {
+  display: block;
+  height: 6rem;
+  margin-top: -6rem;
+  content: "";
+}
+
+.anchor {
+  visibility: hidden;
+  padding-left: 0.5rem;
+}
+
+h1:hover a,
+h2:hover a,
+h3:hover a,
+h4:hover a {
+  visibility: visible;
+  text-decoration: none;
+}
+
+.card-list {
+  margin-top: 2.25rem;
+}
+
+.edit-page {
+  margin-top: 3rem;
+  font-size: $font-size-base;
+}
+
+.edit-page svg {
+  margin-right: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+p.meta {
+  margin-top: 0.5rem;
+  font-size: $font-size-base;
+}
+
+.breadcrumb {
+  margin-top: 2.25rem;
+  font-size: 1rem;
+}
+.HeroBanner{
+  padding-top: 100px;
+  padding-bottom: 132px;
+  background-image: linear-gradient(102deg,$purple, $purple-dark 80%);
+  margin-left:auto;
+  margin-right: auto;
+  width:100%;
+  color: #fff;
+  font-family: sans-serif;
+}
+.home .HeroBanner{
+  padding-top: 145px;
+}
+.homeHeaderText{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 800px;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    font-family: Rowdies,sans-serif;
+}
+@include media-breakpoint-up(xl){
+  .HeroBanner{
+    padding-top: 10em;
+  }
+}
+  @media screen and (max-width: 991px){
+      .homeHeaderText {
+      width: 90%;
+      margin-top: 0;
+      padding-left: 0;
+      }
+      
+  }
+  @media screen and (max-width: 767px){
+      .homeHeaderText {
+      width: 100%;
+      margin-top: 0;
+      padding-right: 16px;
+      padding-left: 16px;
+      }
+      .homevector{
+        display: none;
+      }
+  }
+  @media screen and (max-width: 479px){
+      .homeH1 {
+      font-size: 36px;
+      line-height: 84%;
+      text-shadow: -2px 2px 0 #000,-2px -2px 0 #000,2px -2px 0 #000,2px 2px 0 #000,6px 6px 0 #ff6b13,9px 9px 0 #ffb352,14px 14px 0 #ffe69b;
+      }
+  
+  }
+  .homeH1 {
+      font-family: Poppins;
+      color: #fff;
+      font-size: 60px;
+      line-height: 100%;
+      font-weight: 800;
+      text-shadow: -2px 2px 0 #000,-2px -2px 0 #000,2px -2px 0 #000,2px 2px 0 #000,6px 6px 0 #ff6b13,9px 9px 0 #ffb352,14px 14px 0 #ffe69b;
+      white-space: pre-line;
+  }
+  .homevector{
+    height:100%;
+    max-height: 20em;
+  }
+
+  .task-widget {
+    width: 100%;
+    margin-right: 16px;
+    padding: 24px;
+    border: 2px solid #000;
+    border-radius: 14px;
+    background-color: #fff;
+    box-shadow: 6px 6px 0 0 #514aff,11px 11px 0 0 #bbb8ff;
+    mix-blend-mode: normal;
+  }
+
+  .task-text-block {
+    padding-top: 16px;
+    font-size: 24px;
+    line-height: 110%;
+    font-weight: 500;
+  }
+.task-wrapper{
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+.unreadTask,a:visited{
+  visibility: hidden;
+}
+.status{
+  font-size:10px;
+}

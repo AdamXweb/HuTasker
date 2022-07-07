@@ -1,0 +1,23 @@
+[
+    {
+        "CategoryName": "Handyperson",
+        "CategoryID": "2",
+        "Qualifier": "Experienced",
+        "CategoryDescription": "Handypeople can help with nearly anything within your house. It can often be cheaper than engaging a specialist.\n",
+        "Typical Tasks": "['Home maintenance', 'Repairs', 'General Labour', 'Art hanging']"
+    },
+    {
+        "CategoryName": "Web Development",
+        "CategoryID": "1",
+        "Qualifier": "Trusted",
+        "CategoryDescription": "Outsourcing a freelancer can be more affordable than hiring staff or an agency.",
+        "Typical Tasks": "['Web Services', 'Database developer', 'Custom integration']"
+    },
+    {
+        "CategoryName": "Movers",
+        "CategoryID": "3",
+        "Qualifier": "Reliable",
+        "CategoryDescription": "Don't hurt yourself moving that item,\nLet an experienced mover take care of that item so you can rest.",
+        "Typical Tasks": "['Moving home or office', 'Furniture', 'Heavy lifting']"
+    }
+]

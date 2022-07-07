@@ -1,0 +1,80 @@
+# Meta Data for SEO
+
+## Homepage
+title = "HuTasker"
+titleSeparator = "-"
+titleAddition = "AirTable X Hugo for tasks"
+description = "HuTasker is a sample site showing potential for integration between AirTable & their API and Hugo, presented as a task tracker app"
+
+## Open Graph
+images = ["logo-hutasker.png"]
+ogLocale = "en_US"
+domainTLD = "/"
+titleHome = "HuTasker"
+
+## Twitter Cards
+twitterSite = "@adamxweb"
+twitterCreator = "@adamxweb"
+
+## JSON-LD
+# schemaType = "Person"
+schemaType = "Organization"
+schemaName = "HuTasker"
+schemaAuthor = "Adam Kostarelas"
+schemaAuthorTwitter = "https://twitter.com/adamxweb"
+schemaAuthorLinkedIn = "https://www.linkedin.com/in/adamkostarelas/"
+schemaAuthorGitHub = "https://github.com/adamxweb"
+schemaLocale = "en-US"
+schemaLogo = "logo-hutasker.png"
+schemaLogoWidth = 512
+schemaLogoHeight = 512
+schemaTwitter = "https://twitter.com/adamxweb"
+schemaLinkedIn = ""
+schemaGitHub = "https://github.com/adamxweb/hutasker"
+schemaSection = "blog"
+
+## Sitelinks Search Box
+siteLinksSearchBox = true
+
+## Chrome Browser
+themeColor = "#fff"
+
+# Images
+quality = 85
+bgColor = "#fff"
+landscapePhotoWidths = [900, 800, 700, 600, 500]
+portraitPhotoWidths = [800, 700, 600, 500]
+lqipWidth = "20x"
+
+# Footer
+footer = "Hugo meets AirTable integration for tasks"
+copyRight = "Copyright (c) 2022 HuTasker"
+
+# Alert
+alert = true
+alertText = "Like HuTasker? <a class=\"alert-link\" href=\"https://github.com/adamxweb/HuTasker/stargazers\">Star us on GitHub</a>. Thanks!</a>"
+
+# Edit Page
+RepoURL = "https://github.com/adamxweb/hutasker"
+RepoLicense = "https://github.com/AdamXweb/HuTasker/blob/main/LICENSE"
+RepoWiki = "https://github.com/AdamXweb/HuTasker/wiki"
+editPage = false
+
+
+taskData= "data/tasks.json"
+
+[options]
+  lazySizes = true
+  clipBoard = true
+  instantPage = true
+  flexSearch = false
+  darkMode = true
+  bootStrapJs = true
+  breadCrumb = true
+
+[[cascade]]
+weburl = ''
+[cascade._target]
+  kind = 'page'
+  path = '/audit/**'
+
