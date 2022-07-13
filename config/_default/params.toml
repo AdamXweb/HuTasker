@@ -78,3 +78,7 @@ weburl = ''
   kind = 'page'
   path = '/audit/**'
 
+[api]
+  name = 'https://api.airtable.com/v0/'
+  baseid = '$BASEID'
+  key = 'Bearer $APIKEY'

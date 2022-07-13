@@ -154,3 +154,126 @@ p.meta {
 .status{
   font-size:10px;
 }
+
+.card-body h2{
+font-size: large;
+}
+
+.card-body ul{
+  padding-left: 0em;
+}
+.card-body{
+  padding: 0em;
+}
+.card-text{
+  border-top: 1px solid #e9ecef;
+}
+.task-specifics{
+  font-size:14px;
+  & li{
+    list-style: none;
+  }
+}
+small, .small {
+  font-size: 0.675em;
+}
+
+
+
+// modal
+#noselection{
+  padding-top:10em;
+  text-align: center;
+  &.hide{
+    display: none;
+  }
+}
+
+.modal-container {
+  position: absolute;
+  display: inline-grid;
+  height: auto;
+  width: auto;
+  top: auto;
+  left: auto;
+  transform: scale(0);
+  z-index: 1;
+  &.task-detail {
+    transform:scale(1);
+    .modal-back {
+      .modal {
+        opacity:0;
+        animation: taskUp .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+      }
+    }
+    + .content {
+      animation: taskDown .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+    }
+    &.out {
+      animation: taskQuickDown 0s .5s linear forwards;
+      + .content {
+        animation: taskForward .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+      }
+    }
+  }
+  .modal-back {
+    display:table-cell;
+  
+    .modal {
+    padding:50px;
+    display:inline-block;
+    border-radius:3px;
+    font-weight:300;
+    position:relative;
+    h2 {
+      font-size:25px;
+      line-height:25px;
+      margin-bottom:15px;
+    }
+    p {
+      font-size:18px;
+      line-height:22px;
+    }
+    }
+  }
+  }
+  @keyframes taskUp {
+    0% {
+      transform:scale(.8) translateY(1000px);
+      opacity:0;
+    }
+    100% {
+      transform:scale(1) translateY(0px);
+      opacity:1;
+    }
+  }
+
+  @keyframes taskDown {
+    0% {
+      transform:scale(1);
+    }
+    100% {
+      transform:scale(.85);
+    }
+  }
+
+  @keyframes taskQuickDown {
+    0% {
+      transform:scale(1);
+    }
+    99.9% {
+      transform:scale(1);
+    }
+    100% {
+      transform:scale(0);
+    }
+  }
+  
+  @keyframes taskForward {
+    0% {
+      transform:scale(.85);
+    }
+    100% {
+      transform:scale(1);
+    }
+  }
