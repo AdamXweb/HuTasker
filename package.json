@@ -16,7 +16,7 @@
     "prestart": "npm run clean",
     "start": "exec-bin bin/hugo/hugo server  --bind=0.0.0.0 --disableFastRender",
     "prebuild": "npm run clean",
-    "build": "npm run csv && exec-bin bin/hugo/hugo --gc --minify",
+    "build": "exec-bin bin/hugo/hugo --gc --minify",
     "build:preview": "npm run build -D -F",
     "clean": "shx rm -rf public resources",
     "clean:install": "shx rm -rf package-lock.json bin node_modules ",
