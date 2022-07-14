@@ -91,7 +91,7 @@ npm run start
 ## Documentation
 - [Hugo](https://gohugo.io/documentation/)
 - [HuTasker](https://github.com/adamxweb/hutasker/wiki)
-- [AirTable API](https://airtable.com)
+- [AirTable API](https://airtable.com/api)
 
 ### Dependencies
 - [Airtable](https://airtable.com/) or [Referral link](https://airtable.com/invite/r/lottIZti)
@@ -99,7 +99,7 @@ npm run start
 - Mapbox
 
 ## Demo Data ⚡
-Link to AirTable coming soon
+View [sample data on Airtable](https://airtable.com/shrCcwZGJUVRv0MzP/tblSHzrj6JvrCd070/viw5gDPSuXekYXbfR?blocks=hide)
 
 # Future
 [creating pages](https://github.com/kidsil/hugo-data-to-pages)
