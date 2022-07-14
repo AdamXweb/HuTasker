@@ -78,7 +78,8 @@ weburl = ''
   kind = 'page'
   path = '/audit/**'
 
+#baseID and key should stay blank here, but filled in a params file in production folder
 [api]
   name = 'https://api.airtable.com/v0/'
-  baseid = '$BASEID'
-  key = 'Bearer $APIKEY'
+  baseid = ''
+  key = ''
