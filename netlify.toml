@@ -11,7 +11,7 @@
   command = "env HUGOxPARAMSxAPIxKEY='Bearer $APIKEY' HUGOxPARAMSxAPIxBASEID='$BASEID' hugo --gc --minify"
 
 [context.deploy-preview]
-  command = "env HUGOxPARAMSxAPIxKEY='Bearer '$APIKEY HUGOxPARAMSxAPIxBASEID='$BASEID' hugo --gc --minify -b $DEPLOY_PRIME_URL"
+  command = "env HUGOxPARAMSxAPIxKEY='Bearer '$APIKEY HUGOxPARAMSxAPIxBASEID=$BASEID hugo --gc --minify -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy]
   command = "npm run csv && hugo --gc --minify -b $DEPLOY_PRIME_URL"
