@@ -1,7 +1,8 @@
 
   {{ define "hero" }}
-  {{$url := .Site.Params.taskData}}
-{{$data := getJSON $url}}
+  {{$URLpath := path.Join .Site.Params.api.baseid .Params.table .Params.view}}
+  {{ $airtable := getJSON .Site.Params.api.url $URLpath (dict "Authorization" .Site.Params.api.key)  }}
+  
 <section class="section container-fluid mt-n3 pb-0 HeroBanner">
   <div class="row justify-content-center">
     <div class="col-md-8 col-lg-6 col-xl-6  text-left ">
@@ -10,7 +11,7 @@
       <a class="btn btn-primary btn-lg px-4 mb-2" href="{{ .Site.Params.RepoWiki }}" role="button">Read Docs</a>
       <a class="btn btn-secondary btn-lg px-4 mb-2 position-relative" href="{{ "tasks" | relURL }}" role="button">View Tasks
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger unreadTask">
-          {{len $data}}+
+          {{len $airtable.records}}+
           <span class="visually-hidden">unread messages</span>
         </span>
       

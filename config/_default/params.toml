@@ -61,8 +61,6 @@ RepoWiki = "https://github.com/AdamXweb/HuTasker/wiki"
 editPage = false
 
 
-taskData= "data/tasks.json"
-
 [options]
   lazySizes = true
   clipBoard = true
@@ -80,6 +78,6 @@ weburl = ''
 
 #baseID and key should stay blank here, but filled in a params file in production folder
 [api]
-  name = 'https://api.airtable.com/v0/'
+  url = 'https://api.airtable.com/v0/'
   baseid = ''
   key = ''
