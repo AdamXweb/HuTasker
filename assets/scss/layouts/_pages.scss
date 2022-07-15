@@ -186,6 +186,7 @@ p.meta {
     padding-left: 0em;
     margin-bottom:0;
   }
+
 }
 .card-text{
   border-top: 1px solid #e9ecef;
@@ -257,9 +258,60 @@ small, .small {
       font-size:18px;
       line-height:22px;
     }
+    .budget h3{
+      -webkit-text-stroke: 1.5px $black;
+      color: $white;
+      text-shadow: 3px 3px 0 $green-300,5px 5px 0 lighten($green-300, 10%),8px 8px 0 lighten($green-300, 15%);
+      font-size: 2em;
+    }
     }
   }
   }
+ 
+  .home-slider{
+    animation: 150s linear 0s infinite normal none running homeslider;
+    animation-name: homeslider;
+    animation-duration: 150s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+    white-space: nowrap;
+transition: all 0.2s ease 0s;
+backface-visibility: hidden;
+transform-style: preserve-3d;
+& a{
+  color:$black;
+}
+}
+.home-slider-container {
+  margin: 0px auto;
+  display: inline-block;
+  -moz-box-align: center;
+  align-items: center;
+}
+.home-slider-task{
+  position: relative;
+display: inline-block;
+vertical-align: top;
+width: 300px;
+height: 150px;
+margin: 10px;
+background: $gray-200 none repeat scroll 0% 0%;
+border-radius: 4px;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px;
+text-decoration: none;
+&:hover{
+  text-decoration: none;
+&:hover .card-title{
+    text-decoration: underline;
+  }
+}
+
+}
+
   @keyframes taskUp {
     0% {
       transform:scale(.8) translateY(1000px);
@@ -298,5 +350,14 @@ small, .small {
     }
     100% {
       transform:scale(1);
+    }
+  }
+
+  @keyframes homeslider{
+    0% {
+      transform: translate3d(0px, 0px, 0px);
+    }
+    100% {
+      transform: translate3d(-1920px, 0px, 0px);
     }
   }

@@ -25,7 +25,7 @@
 </section>
 {{ end }}
 
-{{ define "task-lists" }}
+{{ define "perks-lists" }}
 <section class="section section-sm">
   <div class="container">
     <div class="row justify-content-center text-center">
@@ -39,7 +39,9 @@
   </div>
 </section>
 {{ end }}
-
+{{ define "task-lists"}}
+{{ partial "task/card-slider.html" .}}
+{{end}}
 {{ define "task-reviews" }}
 <section class="section section-sm container-fluid">
   <div class="row justify-content-center text-center">

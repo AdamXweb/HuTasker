@@ -298,13 +298,25 @@ body.dark .page-links li:not(:first-child) {
   border-top: 1px dashed $border-dark;
 }
 
-body.dark .card {
+body.dark .task-widget {
   background: $body-bg-dark;
   border: 1px solid $white;
+  &:hover{
+    box-shadow: 6px 6px 4px 0 $task-blue,15px 15px 2px 0 $task-blue-lighter;
+    border: 2px dotted $white;
+  }
+  &.selected{
+    border: 2px dashed $white;
+    box-shadow: 6px 6px 4px 0 darken($task-blue, 10%),15px 15px 2px 0 darken($task-blue-lighter, 10%);
+
+  }
 }
 
 body.dark .card.bg-light {
   background: $body-overlay-dark !important;
+}
+body.dark .task-specifics li{
+  color: $white;
 }
 
 body.dark .navbar .menu-icon .navicon {
@@ -369,4 +381,11 @@ body.dark .copy-status:active::after {
 }
 body.dark .HeroBanner{
   background-image: linear-gradient(102deg,$hero-bg-dark, $purple-dark 80%);
+}
+
+body.dark .home-slider-task{
+  background: $gray-500 none repeat scroll 0% 0%;
+  .text-muted{
+    color: $black !important;
+  }
 }
