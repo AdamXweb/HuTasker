@@ -86,7 +86,7 @@ body.dark .navbar-light .navbar-text {
 }
 
 body.dark .alert-primary a {
-  color: $body-bg-dark;
+  color: $body-bg-dark !important;
 }
 
 body.dark .alert-warning {
