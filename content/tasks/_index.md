@@ -12,6 +12,7 @@ search:
     - "Submitted - Waiting for offers"
     - "Offers Received, waiting for user to accept"
 table: /Tasks
-view: ?view=Master
+# This view filters the tasks with airtable, reducing the amount of data sent to the front end
+view: ?view=Open%20Tasks
 ---
 

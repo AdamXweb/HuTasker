@@ -1,19 +1,14 @@
 <p class="text-center"> {{ .Description }}</p>
 {{/*  modal or page   */}}
 {{$URLpath := path.Join .Site.Params.api.baseid .Params.table .Params.view}}
-{{ $airtable := getJSON .Site.Params.api.name $URLpath (dict "Authorization" .Site.Params.api.key)  }}
-{{ with .Site.Params.taskData}}
-    {{$url := .}}
-    {{$data := getJSON $url}}
-    {{ $search := $.Params.search }}
-    {{/*  {{ $filtered := where $data $search "intersect" "stautus"}}  */}}
+{{ $airtable := getJSON .Site.Params.api.url $URLpath (dict "Authorization" .Site.Params.api.key)  }}
 <div class="row task-wrapper">
     {{range $airtable.records }}
     <div class="card task-widget" id="task-detail-{{.id}}">
-        {{with .fields}}
 
         <div class="card-body">
-            <h2 class="task-title">{{ .TaskName }}</h2>
+            <h2 class="task-title" id="{{.id}}">        {{with .fields}}
+                {{ .TaskName }}</h2>
                 <ul class="task-specifics">
                     <li>📍 {{.Location }}</li>
                     <li>🗓 {{time.Format "Monday, Jan 2, 2006" .DateForCompletion}}</li>
@@ -26,4 +21,3 @@
     </div>
     {{end}}
 </div>
-{{end}}
