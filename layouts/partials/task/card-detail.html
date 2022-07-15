@@ -13,16 +13,15 @@
         {{with .fields}}
 
         <div class="card-body">
-            <h2>{{ .TaskName }}</h2>
-            <p class="card-text task-text-block">
+            <h2 class="task-title">{{ .TaskName }}</h2>
                 <ul class="task-specifics">
                     <li>📍 {{.Location }}</li>
                     <li>🗓 {{time.Format "Monday, Jan 2, 2006" .DateForCompletion}}</li>
                 </ul>
-            </p>
             <span class="badge bg-primary status">{{.Status}}</span>
+            <h3><small>Budget: </small>${{.Budget}}</h3>
         </div>
-    <h3><small>Budget: </small>${{.Budget}}</h3>
+   
     {{end}}
     </div>
     {{end}}

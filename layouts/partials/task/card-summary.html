@@ -57,15 +57,20 @@ for (const taskId of taskIds){
       };
 };	
 function addclass(taskDetail, modalContainer){
-  let taskId = document.getElementById(taskDetail);
-  let taskmodalID = document.getElementById(modalContainer);
-  let active = document.getElementsByClassName('modal-container');
-  document.getElementById('noselection').classList.add('hide');
-  // iterate over all modals with class modal-container and remove active class
-  for (const activeM of active){
-      activeM.classList.remove('task-detail');
-  };
+    let taskId = document.getElementById(taskDetail);
+    let taskmodalID = document.getElementById(modalContainer);
+    let active = document.getElementsByClassName('modal-container');
+    let taskselected = document.getElementsByClassName('task-widget');
+    document.getElementById('noselection').classList.add('hide');
+    // iterate over all modals with class modal-container and remove active class
+    for (const activeM of active){
+        activeM.classList.remove('task-detail');
+    };
+    for (const taskSelect of taskselected){
+        taskSelect.classList.remove('selected');
+    };
   taskmodalID.classList.add('task-detail');
+  taskId.classList.add('selected');
 }
 
 </script>
