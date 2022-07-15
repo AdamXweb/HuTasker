@@ -1,21 +1,81 @@
-{{ with .Site.Params.taskData}}
-    {{$url := .}}
-    {{$data := getJSON $url}}
-    {{range $data}}
-    <div class="card">
-       <img src="" class="card-img-top">   
+<div id="noselection">
+    <img src="" alt="Select a task to begin">
+</div>
+{{$URLpathtask := path.Join .Site.Params.api.baseid .Params.table .Params.view}}
+{{ $airtable := getJSON .Site.Params.api.url $URLpathtask (dict "Authorization" .Site.Params.api.key)  }}
+{{$URLpathuser := path.Join .Site.Params.api.baseid "Users" "?view=Master%20View"}}
+{{ $airtableuser := getJSON .Site.Params.api.url $URLpathuser (dict "Authorization" .Site.Params.api.key)  }}
 
-    <div class="card-body">
-        <h2>{{.TaskName}}</h2>
-        <p class="card-text">
-            <ul>
-                <li>{{.Location}}</li>
-                <li>{{.DateForCompletion}}</li>
+
+
+<div class="text-center">{{ .Content }}</div>
+{{range $airtable.records }}
+<div id="modal-container-{{.id}}" class="modal-container">
+  <div class="modal-back">
+  {{with .fields}}
+    <div class="modal">
+        <div class="row">
+            <div class="col-md-10">
+            <h2>{{.TaskName}}</h2>
+            <ul class="task-specifics">
+                {{$user := $airtableuser.records}}
+                {{with .Creator}}
+                {{$creator:=index . 0}}
+                {{range where $user "id" $creator}}
+                <li>Posted by {{.fields.Name}} </li>
+                {{end}}
+                {{end}}
+                <li>📍 {{.Location }}</li>
+                <li>🗓 {{time.Format "Monday, Jan 2, 2006" .DateForCompletion}}</li>
+                {{with .Attachments}}
+                <img src="{{index . 0 "url"}}" width="100%">
+                {{end}}
             </ul>
-        </p>
-        <span class="badge badge-primary">{{.Status}}</span>
+            </div>
+            <div class="col-md-4 budget">
+                <h5>Task Budget</h5>
+                <h3>${{.Budget}}</h3>
+            </div>
+        </div>
+        <h3>Description of task:</h3>
+        <p>{{.DescriptionOfTask}}</p>
+        <h2>Offers</h2>
+        {{/*  {{ partial "task/offers.html" .}}  */}}
+
     </div>
-    <h3>{{.Budget}}</h3>
-    </div>
-    {{end}}
+  {{end}}
+  </div>
+</div>
 {{end}}
+<script>
+let taskIds = [{{range $airtable.records }}{{.id}}, {{end}} ];
+for (const taskId of taskIds){
+  let modalContainer = "modal-container-" + taskId;
+  let taskDetail = "task-detail-" + taskId;
+  current = window.location.hash.split('#')[1];
+  document.getElementById(taskDetail).onclick = function(){
+      addclass(taskDetail, modalContainer)
+      };
+    //Grab URL location, and activate appropriate modal
+  if(taskId == current){
+    addclass(taskDetail, modalContainer)
+    }    
+};	
+function addclass(taskDetail, modalContainer){
+    let taskId = document.getElementById(taskDetail);
+    let taskmodalID = document.getElementById(modalContainer);
+    let active = document.getElementsByClassName('modal-container');
+    let taskselected = document.getElementsByClassName('task-widget');
+    document.getElementById('noselection').classList.add('hide');
+    // iterate over all modals with class modal-container and remove active class
+    for (const activeM of active){
+        activeM.classList.remove('task-detail');
+    };
+    for (const taskSelect of taskselected){
+        taskSelect.classList.remove('selected');
+    };
+  taskmodalID.classList.add('task-detail');
+  taskId.classList.add('selected');
+}
+
+</script>

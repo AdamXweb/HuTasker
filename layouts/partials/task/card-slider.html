@@ -1,0 +1,24 @@
+{{/*  modal or page   */}}
+{{$URLpath := path.Join .Site.Params.api.baseid "/Tasks" .Params.view}}
+{{ $airtable := getJSON .Site.Params.api.url $URLpath (dict "Authorization" .Site.Params.api.key)  }}
+
+<section class="row ">
+        <div class="home-slider">
+            <div class="home-slider-container">
+
+        {{range $airtable.records }}
+        <a href="/tasks#{{.id}}" class="card home-slider-task">
+            {{with .fields}}
+            {{/*  {{.category}}  */}}
+            <div class="card-body">
+                <h5 class="card-title">{{ .TaskName }}</h5>
+               <h6 class="card-subtitle mb-3 text-muted"><small>Budget: </small>${{.Budget}}</h6>
+               <p class="card-text pt-2">Category</p>
+
+            </div>
+            {{end}}
+        </a>
+        {{end}}
+        </div>
+    </div>
+</section>

@@ -5,3 +5,5 @@ bin
 .DS_Store
 package-lock.json
 .hugo_build.lock
+public
+config/production/params.toml

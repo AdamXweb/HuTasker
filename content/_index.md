@@ -16,5 +16,6 @@ test:
     3:
         title: Secure
         p: Payments are handled by us, and is only released when the task is completed.
-  
+table: /Tasks
+view: ?view=Master
 ---

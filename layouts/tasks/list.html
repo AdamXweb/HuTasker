@@ -1,11 +1,8 @@
 {{ define "main" }}
-<link rel="stylesheet" href="{{.Site.BaseURL}}/more.css">
-
 <div class="row justify-content-center">
 	<div class="col-lg-5 col-xl-4">
 		<nav class="docs-links" aria-label="Main navigation">
-			{{ partial "task/card-detail.html" .}}
-
+			{{ partial "task/card-list.html" .}}
 		</nav>
 	</div>
   <div class="col-md-12 col-lg-10 col-xl-8">
@@ -19,13 +16,9 @@
 			</nav>
 		{{ end }}
     <article>
-      <h1 class="text-center">{{ .Title }}</h1>
-	  <p class="text-center"> {{ .Description }}</p>
-	  {{/*  {{ partial "task/card-summary.html" .}}  */}}
-
-      <div class="text-center">{{ .Content }}</div>
-			
+	  {{ partial "task/card-summary.html" .}}
     </article>
   </div>
 </div>
 {{ end }}
+

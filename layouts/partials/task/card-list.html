@@ -1,0 +1,23 @@
+<p class="text-center"> {{ .Description }}</p>
+{{/*  modal or page   */}}
+{{$URLpath := path.Join .Site.Params.api.baseid .Params.table .Params.view}}
+{{ $airtable := getJSON .Site.Params.api.url $URLpath (dict "Authorization" .Site.Params.api.key)  }}
+<div class="row task-wrapper">
+    {{range $airtable.records }}
+    <div class="card task-widget" id="task-detail-{{.id}}">
+
+        <div class="card-body">
+            <h2 class="task-title" id="{{.id}}">        {{with .fields}}
+                {{ .TaskName }}</h2>
+                <ul class="task-specifics">
+                    <li>📍 {{.Location }}</li>
+                    <li>🗓 {{time.Format "Monday, Jan 2, 2006" .DateForCompletion}}</li>
+                </ul>
+            <span class="badge bg-primary status">{{.Status}}</span>
+            <h3><small>Budget: </small>${{.Budget}}</h3>
+        </div>
+   
+    {{end}}
+    </div>
+    {{end}}
+</div>
