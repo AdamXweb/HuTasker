@@ -197,6 +197,10 @@ p.meta {
     list-style: none;
     color: #20222c;
   }
+  .poster{
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
 }
 small, .small {
   font-size: 0.675em;
@@ -217,11 +221,12 @@ small, .small {
   position: absolute;
   display: inline-grid;
   height: auto;
-  width: auto;
   top: auto;
   left: auto;
   transform: scale(0);
   z-index: 1;
+  max-height:calc(100vh - 8.75rem);
+  overflow: scroll;
   &.task-detail {
     transform:scale(1);
     .modal-back {
@@ -265,6 +270,9 @@ small, .small {
       font-size: 2em;
     }
     }
+  }
+  .img-thumbnail{
+    max-width: 50px !important;
   }
   }
  
@@ -312,6 +320,21 @@ text-decoration: none;
 
 }
 
+.offer{
+  margin-bottom: 0.5rem;
+  padding:2rem;
+  h5{
+    margin:0 !important;
+  }
+  .card-text{
+    padding-top: 1rem;
+  }
+  .offer-status{
+    padding-top: 1rem;
+    border-top: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    font-size:small;
+  }
+}
   @keyframes taskUp {
     0% {
       transform:scale(.8) translateY(1000px);

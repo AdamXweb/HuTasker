@@ -1,0 +1,54 @@
+{{ $data := .data }}
+{{$params := .params}}
+{{with $params}}
+{{$URLpathtask := path.Join .Site.Params.api.baseid .Params.table .Params.view}}
+{{ $airtable := getJSON .Site.Params.api.url $URLpathtask (dict "Authorization" .Site.Params.api.key)  }}
+{{$URLpathtaskoffer := path.Join .Site.Params.api.baseid "TaskOffer" "?view=Master"}}
+{{ $airtableoffer := getJSON .Site.Params.api.url $URLpathtaskoffer (dict "Authorization" .Site.Params.api.key)  }}
+{{$URLpathuser := path.Join .Site.Params.api.baseid "Users" "?view=Master%20View"}}
+{{ $airtableuser := getJSON .Site.Params.api.url $URLpathuser (dict "Authorization" .Site.Params.api.key)  }}
+
+    {{$offer := $airtableoffer.records}}
+    {{range $data.TaskOffer}}
+        {{range where $offer "id" .}}
+            <div class="card offer">
+                <div class="card-body">
+                    <div class="row">
+                    <small>Offer from</small>
+                    <h5 class="card-title col-lg-10">
+                        {{$user := $airtableuser.records}}
+                        {{with .fields.Completer}}
+                        {{$creator:=index . 0}}
+                        {{range where $user "id" $creator}}
+                        {{.fields.Name}}
+                        {{end}}
+                        {{end}}
+                    </h5>
+                    <span class="col-lg-6">Amount ${{.fields.OfferAmount}}</span>
+                    </div>
+                    <p class="card-text">                       
+                        {{.fields.OfferDescription}}
+                    </p>
+                    <div class="offer-status">
+                        Offer status <span class="badge bg-{{with(index .fields "Status")}}{{ cond (eq . "Declined") "danger" (cond (eq . "Sent") "warning" (cond (eq . "Accepted") "success" "light")) }}{{end}}">{{.fields.Status}}</span>
+                    </div>
+                </div>
+            </div>
+        {{end}}
+    {{end}}
+{{end}}
+
+
+
+{{/*  {{range $airtable.records}}
+{{range $airtableoffer.records}}
+{{with .fields.Task}}
+{{$creator :=  (index . 0) }}
+{{$.id}}
+    {{/*  {{range where $creator "id" }}      
+            <li>Posted by {{.fields.Creator}} </li>
+    {{end}}  
+{{end}}
+
+{{end}}
+{{end}}  */}}

@@ -5,12 +5,11 @@
 {{ $airtable := getJSON .Site.Params.api.url $URLpathtask (dict "Authorization" .Site.Params.api.key)  }}
 {{$URLpathuser := path.Join .Site.Params.api.baseid "Users" "?view=Master%20View"}}
 {{ $airtableuser := getJSON .Site.Params.api.url $URLpathuser (dict "Authorization" .Site.Params.api.key)  }}
-
-
+{{.Scratch.Set "params" .}}
 
 <div class="text-center">{{ .Content }}</div>
 {{range $airtable.records }}
-<div id="modal-container-{{.id}}" class="modal-container">
+<div id="modal-container-{{.id}}" class="modal-container col-md-12 col-lg-10 col-xl-8">
   <div class="modal-back">
   {{with .fields}}
     <div class="modal">
@@ -22,14 +21,12 @@
                 {{with .Creator}}
                 {{$creator:=index . 0}}
                 {{range where $user "id" $creator}}
-                <li>Posted by {{.fields.Name}} </li>
+                <li class="poster">Posted by {{.fields.Name}} {{if .fields.AvatarURL}}<img src="{{.fields.AvatarURL}}" class="img-thumbnail" alt="{{.fields.Name}}'s avatar">{{end}}
+                </li>
                 {{end}}
                 {{end}}
                 <li>📍 {{.Location }}</li>
                 <li>🗓 {{time.Format "Monday, Jan 2, 2006" .DateForCompletion}}</li>
-                {{with .Attachments}}
-                <img src="{{index . 0 "url"}}" width="100%">
-                {{end}}
             </ul>
             </div>
             <div class="col-md-4 budget">
@@ -39,9 +36,12 @@
         </div>
         <h3>Description of task:</h3>
         <p>{{.DescriptionOfTask}}</p>
+        {{with .Attachments}}
+                <img src="{{index . 0 "url"}}" width="100%">
+                {{end}}
         <h2>Offers</h2>
-        {{/*  {{ partial "task/offers.html" .}}  */}}
-
+        {{$params := $.Scratch.Get "params"}}
+        {{ partial "task/offers.html" (dict "data" . "params" $params)}}
     </div>
   {{end}}
   </div>

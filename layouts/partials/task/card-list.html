@@ -5,19 +5,21 @@
 <div class="row task-wrapper">
     {{range $airtable.records }}
     <div class="card task-widget" id="task-detail-{{.id}}">
-
         <div class="card-body">
-            <h2 class="task-title" id="{{.id}}">        {{with .fields}}
+            <h2 class="task-title" id="{{.id}}">
+                {{with .fields}}
                 {{ .TaskName }}</h2>
                 <ul class="task-specifics">
                     <li>📍 {{.Location }}</li>
                     <li>🗓 {{time.Format "Monday, Jan 2, 2006" .DateForCompletion}}</li>
                 </ul>
-            <span class="badge bg-primary status">{{.Status}}</span>
             <h3><small>Budget: </small>${{.Budget}}</h3>
+            <span class="badge bg-primary status">{{.Status}}</span>
+            {{if (index . "TaskOffer")}}
+            <small>Offers: {{len .TaskOffer}}</small>
+            {{end}}
         </div>
-   
-    {{end}}
+                {{end}}
     </div>
     {{end}}
 </div>
