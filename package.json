@@ -23,10 +23,9 @@
     "build:preview": "npm run build -D -F",
     "clean": "shx rm -rf public resources",
     "clean:install": "shx rm -rf package-lock.json bin node_modules ",
-    "lint": "npm run -s lint:scripts && npm run -s lint:styles && npm run -s lint:markdown",
+    "lint": "npm run -s lint:scripts && npm run -s lint:styles",
     "lint:scripts": "eslint assets/js config functions",
     "lint:styles": "stylelint \"assets/scss/**/*.{css,sass,scss,sss,less}\"",
-    "lint:markdown": "markdownlint \"*.md\" \"content/**/*.md\"",
     "server": "exec-bin bin/hugo/hugo server",
     "test": "npm run -s lint",
     "env": "env",
@@ -53,8 +52,8 @@
     "postcss-cli": "^10.0",
     "purgecss-whitelister": "^2.4",
     "shx": "^0.3.4",
-    "stylelint": "^14.9.1",
-    "stylelint-config-standard-scss": "^5.0"
+    "stylelint": "^14.2",
+    "stylelint-config-standard-scss": "^3.0"
   },
   "otherDependencies": {
     "hugo": "0.101.0"
