@@ -315,6 +315,9 @@ body.dark .task-widget {
 body.dark .card.bg-light {
   background: $body-overlay-dark !important;
 }
+body.dark .card.offer{
+  background-color: transparent;
+}
 body.dark .task-specifics li{
   color: $white;
 }

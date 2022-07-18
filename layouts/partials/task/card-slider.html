@@ -2,7 +2,8 @@
 {{$URLpath := path.Join .Site.Params.api.baseid "/Tasks" .Params.view}}
 {{ $airtable := getJSON .Site.Params.api.url $URLpath (dict "Authorization" .Site.Params.api.key)  }}
 
-<section class="row ">
+<section class="row sample-tasks">
+    <h3>Sample Tasks!</h3>
         <div class="home-slider">
             <div class="home-slider-container">
 
