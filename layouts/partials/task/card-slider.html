@@ -3,7 +3,7 @@
 {{ $airtable := getJSON .Site.Params.api.url $URLpath (dict "Authorization" .Site.Params.api.key)  }}
 
 <section class="row sample-tasks">
-    <h3>Sample Tasks!</h3>
+    <h3 class="display-6">Sample Tasks!</h3>
         <div class="home-slider">
             <div class="home-slider-container">
 
@@ -14,7 +14,7 @@
             <div class="card-body">
                 <h5 class="card-title">{{ .TaskName }}</h5>
                <h6 class="card-subtitle mb-3 text-muted"><small>Budget: </small>${{.Budget}}</h6>
-               <p class="card-text pt-2">Category</p>
+               <p class="card-text pt-2">{{(index .CategoryName 0)}}</p>
 
             </div>
             {{end}}

@@ -3,9 +3,8 @@
   functions = "functions"
 
 [build.environment]
-  NODE_VERSION = "16.3.0"
-  NPM_VERSION = "7.16.0"
-  HUGO_VERSION = "0.84.4"
+  NODE_VERSION = "16.16.0"
+  NPM_VERSION = "8.11.0"
 
 [context.production]
   command = "env HUGOxPARAMSxAPIxKEY='Bearer '$APIKEY HUGOxPARAMSxAPIxBASEID=$BASEID hugo --gc --minify"
