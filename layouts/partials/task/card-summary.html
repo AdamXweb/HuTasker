@@ -3,7 +3,7 @@
 </div>
 {{$URLpathtask := path.Join .Site.Params.api.baseid .Params.table .Params.view}}
 {{ $airtable := getJSON .Site.Params.api.url $URLpathtask (dict "Authorization" .Site.Params.api.key)  }}
-{{$URLpathuser := path.Join .Site.Params.api.baseid "Users" "?view=Master%20View"}}
+{{$URLpathuser := path.Join .Site.Params.api.baseid "Users" "?view=Master"}}
 {{ $airtableuser := getJSON .Site.Params.api.url $URLpathuser (dict "Authorization" .Site.Params.api.key)  }}
 {{.Scratch.Set "params" .}}
 
