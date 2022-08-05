@@ -17,7 +17,7 @@
     "init": "shx rm -rf .git && git init -b main",
     "create": "exec-bin bin/hugo/hugo new",
     "prestart": "npm run clean",
-    "start": "exec-bin bin/hugo/hugo server --environment production --bind=0.0.0.0 --disableFastRender",
+    "start": "exec-bin bin/hugo/hugo server --bind=0.0.0.0 --disableFastRender",
     "prebuild": "npm run clean",
     "build": "exec-bin bin/hugo/hugo --gc --minify",
     "build:preview": "npm run build -D -F",
@@ -57,5 +57,9 @@
   },
   "otherDependencies": {
     "hugo": "0.101.0"
+  },
+  "dependencies": {
+    "prompts": "^2.4.2",
+    "toml": "^3.0.0"
   }
 }

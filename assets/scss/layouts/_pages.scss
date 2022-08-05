@@ -340,6 +340,11 @@ text-decoration: none;
   margin-top:1rem;
   text-align: center;
 }
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
   @keyframes taskUp {
     0% {
       transform:scale(.8) translateY(1000px);
