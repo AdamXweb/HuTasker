@@ -8,10 +8,6 @@
   url = "/categories/"
   weight = 3
 
-[[main]]
-  name = "Blog"
-  url = "/blog/"
-  weight = 4
 
 [[social]]
   name = "GitHub"
