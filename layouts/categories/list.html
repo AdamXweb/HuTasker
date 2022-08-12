@@ -1,0 +1,22 @@
+{{ define "main" }}
+
+<div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+{{ range .Pages}}
+<a href="{{.RelPermalink}}">
+
+  <div class="card card-cover  overflow-hidden text-white bg-dark rounded-5 shadow-lg task-wrapper" style="background-image: url('{{.}}');">
+      <div class="d-flex flex-column p-5 pb-3 text-white text-shadow-1">
+        <h2 class="mb-4 display-7 lh-1 fw-bold">  {{ .Title }}</h2>
+        <ul class="d-flex list-unstyled mt-auto">
+          
+         <li class="me-auto">
+             {{.Description}}
+         </li>
+        
+        </ul>
+      </div>
+    </div>
+</a>
+{{end}}
+</div>
+{{end}}

@@ -317,7 +317,9 @@ text-decoration: none;
     text-decoration: underline;
   }
 }
-
+}
+.categorytask{
+  height:50px;
 }
 
 .offer{
@@ -339,6 +341,11 @@ text-decoration: none;
 .sample-tasks{
   margin-top:1rem;
   text-align: center;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
 }
   @keyframes taskUp {
     0% {

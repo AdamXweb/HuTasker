@@ -1,0 +1,43 @@
+{{ define "main" }}
+{{$URLpathtask := path.Join .Site.Params.api.baseid "/Categories" "?view=Master"}}
+{{ $airtable := getJSON .Site.Params.api.url $URLpathtask (dict "Authorization" .Site.Params.api.key)  }}
+
+
+<div style="background-image: linear-gradient(102deg, #4a2379, #321852 80%);">
+<section class="section container-fluid mt-n3 pb-3 HeroBanner">
+  <div class="row justify-content-center">
+    <div class="col-xl-12 text-center homeHeaderText">
+      <h1 class="mt-0 homeH1">{{ $.Title }}</h1>
+    </div>
+  </div>
+</section>
+{{range $airtable.records}}
+{{if (eq .fields.CategoryName $.Params.Title) }}
+
+<h2 style="color:#fff;top: 50vh;text-align: center;">Find <i>{{.fields.CategoryName}}</i> in your area!</h2>
+
+<section class="row sample-tasks">
+    <div style="min-height: 50vh;">
+        <div class="">
+            <div class="home-slider-container">
+                {{/*  Hacky filter as range where .fields "CategoryName" $.Params.Title wasn't working */}}
+                {{ with (index .fields "Typical Tasks")}}
+                    {{range .}}
+                    <div class="card home-slider-task categorytask">
+                        <div class="card-body">
+                            <p class="card-title">{{ . }}</p>                
+                        </div>
+                    </div>
+                    {{end}}
+                {{end}}
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{end}}
+{{end}}
+
+</div>
+
+{{ end }}
