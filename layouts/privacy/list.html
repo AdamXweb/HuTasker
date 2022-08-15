@@ -1,0 +1,35 @@
+{{define "main"}}
+<section class="section container-fluid mt-n3 pb-3 HeroBanner">
+    <div class="row justify-content-center">
+      <div class="col-xl-12 text-center homeHeaderText">
+        <h1 class="mt-0 homeH1">{{ .Title }}</h1>
+      </div>
+    </div>
+  </section>
+  <section>
+      <h2>Our Services</h2>
+      {{.Content}}
+  </section>
+  <h2>Policy</h2>
+  <small>Welcome to https://hutasker.netlify.app Throughout this Privacy Policy, "personal information" or "personal data" refers to any information that is unique to an individual, such as name, address, email address, phone number, IP address and other information that can reasonably identify an individual. </small>
+  <h3>What Information Do We Collect</h3>
+  <h4>Information Collected Directly</h4>
+  <small>You can generally visit our Site without having to submit any personal information. If you request more information, or input data into our AirTable sheet, we will collect information as follows.</small>
+  <small>User Data: Anything input in the AirTable sheet will save to a version history. Participating in and submitting user data is optional and not required to use this theme and site.</small>
+  <h4>Information Collected Indirectly</h4>
+  <small>When you use or interact with the Site, we collect information about your use of the Site via a third party - <a href="https://docs.simpleanalytics.com/what-we-collect?ref=hutasker.netlify.app">Simpleanalytics.</a> Please see below an embed of the traffic, open to the public.</small>
+  <h4>Cookies</h4>
+  <small>We don't set cookies, however the AirTable embed on the home page may interact with AirTable.</small>
+  <h3>How we use Information</h3>
+  <small>Being a template for a Static Site Generator, we aim to collect as little information as possible. However having a link to our AirTable sheet accessible to the public, any information input will be displayed for the purposes of providing this example site.</small>
+  <small>We may embed the AirTable sheet into multiple sources like: this site, an embed or any other use.</small>
+  <h3>Do Not Track</h3>
+  <small>Our analytics has been set up to gather and measure the popularity of the theme, and as such doesn't respond to Do Not Track ("DNT") browser signals. For more information on DNT settings generally, please visit https://allaboutdnt.com.</small>
+  <small>If you would like to block analytics, the script from simpleanalytics is generally in most block lists.</small>
+  <h3>How Long Do We Keep Your Personal information?</h3>
+  <small>The lifespan of the AirTable account and the use of the data will be retained for as long as needed to provide this site.</small>
+  <h3>Data Security</h3>
+  <small>Reasonable steps have been taken to protect the data and its security. We have put in place reasonably appropriate security measures designed to prevent the AirTable data from being accidently lost, used or accessed in an unauthorised way, altered or deleted. We limit access to the API keys and logins to protect the data template.</small>
+  <br>
+  <small>Last updated on {{.Params.lastmod.Format "Jan 2 2006"}}</small>
+{{end}}
