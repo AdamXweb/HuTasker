@@ -55,7 +55,19 @@
 <section class="section section-sm">
   <div class="container text-center">
     <h3>Here's a preview of the data from Airtable</h3>
-    <iframe class="airtable-embed" src="https://airtable.com/embed/shrCcwZGJUVRv0MzP?backgroundColor=orange" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
+    <iframe class="airtable-embed" src="{{.Site.Params.AirtableEmbed}}" frameborder="0" onmousewheel="" width="100%" height="533" style="background: transparent; border: 1px solid #ccc;"></iframe>
   </div>
 </section>
 {{end}}
+{{define "sample-categories"}}
+<section class="section section-sm">
+  <div class="container text-center">
+    <h3>Check out these featured Categories</h3>
+    {{ partial "categories/homebox.html" .}}
+  </div>
+</section>
+{{end}}
+{{define "end-cta"}}
+{{partial "main/end-cta.html" .}}
+{{end}}
+

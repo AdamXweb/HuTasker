@@ -14,10 +14,10 @@
 let config = {
   root: '', //Root hugo folder, can be empty
   dataFolder: 'data', //Data folder path (will fetch ALL files from here)
-  type: 'tasks', //Type name [basically layout] (save it under "layouts/NAME/single.html" or themes/THEME/layouts/NAME/single.html). Can be overridden on individual pages by defining "type" under "fields"
-  pages: 'posts', //Pages elemenet in your data, in case it's "posts" or "articles" etc.
+  type: 'categories', //Type name [basically layout] (save it under "layouts/NAME/single.html" or themes/THEME/layouts/NAME/single.html). Can be overridden on individual pages by defining "type" under "fields"
+  pages: 'categories', //Pages elemenet in your data, in case it's "posts" or "articles" etc.
   contentPath: 'content', //Path to content directory (in case it's not "content")
-  hugoPath: '/bin/hugo' //Path to hugo binary (if global, e.g. /snap/bin/hugo)
+  hugoPath: '/usr/local/bin/hugo' //Path to hugo binary (if global, e.g. /snap/bin/hugo)
 }
 
 const fs = require('fs');
@@ -32,6 +32,7 @@ const converToObject = (file) => {
   if (filetype === 'json') return JSON.parse(fileContent);
   if (filetype === 'yml' || filetype === 'yaml') return jsyml.safeLoad(fileContent);
   if (filetype === 'toml') return jstml.parse(fileContent);
+  if (filetype === 'csv') console.log('skipping csv');
 };
 const build = async (add, force) => {
   if (typeof add === 'undefined') add = true;
@@ -46,16 +47,15 @@ const build = async (add, force) => {
   if (dataFiles.length < 1) return console.log('No data files');
   for (let i in dataFiles) {
     let data = converToObject(dataFiles[i]);
-    let pages = config.pages ? data[config.pages] : data;
+    let pages = config.pages ? data : data;
     for (let j in pages) {
-      if (!pages[j].path) return console.log('Error: Pages must include path!');
-      if (!pages[j].fields) return console.log('Error: Pages must include fields!');
-      if (!pages[j].fields.type) pages[j].fields.type = config.type;
+      if (!pages[j].CategoryName) return console.log('Error: Pages must include path!');
+      if (!pages[j].CategoryDescription) return console.log('Error: Pages must include fields!');
       
-      const pagePath = config.root + config.contentPath + '/' + pages[j].path;
+      const pagePath = config.root + config.contentPath + '/' + config.pages + '/' + pages[j].CategoryName;
       if (add) {
         fse.ensureDirSync(pagePath);
-        fs.writeFileSync(pagePath + '/index.md', JSON.stringify(pages[j].fields) + '\n');
+        fs.writeFileSync(pagePath + '/index.md', '--- \n' + 'title: ' + JSON.stringify(pages[j].CategoryName) + '\ndescription: ' + JSON.stringify(pages[j].CategoryDescription) + '\nqualifier: ' + JSON.stringify(pages[j].Qualifier) + '\n---');
         console.log('Created file: ' + pagePath + '/index.md');
       } else if (fs.existsSync(pagePath)) {
         let response;

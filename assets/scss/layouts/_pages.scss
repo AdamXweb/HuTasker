@@ -317,7 +317,29 @@ text-decoration: none;
     text-decoration: underline;
   }
 }
-
+}
+.categorytask{
+  height:50px;
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  margin: 10px;
+  background: #e9ecef none repeat scroll 0% 0%;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px;
+  text-decoration: none;
+  box-shadow: 6px 6px 0 0 $task-blue,10px 10px 0 0 $task-blue-lighter;
+  mix-blend-mode: normal;
+  & .card-body{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &:hover{
+    box-shadow: 6px 6px 4px 0 $task-blue,10px 10px 2px 0 $task-blue-lighter;
+    border: 2px dotted $black;
+  }
 }
 
 .offer{
@@ -339,6 +361,16 @@ text-decoration: none;
 .sample-tasks{
   margin-top:1rem;
   text-align: center;
+}
+
+.bi {
+  vertical-align: -.125em;
+  fill: currentColor;
+}
+
+.catimage{
+  max-height:50vh;
+  padding:2em;
 }
   @keyframes taskUp {
     0% {

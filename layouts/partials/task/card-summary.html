@@ -37,8 +37,8 @@
         <h3>Description of task:</h3>
         <p>{{.DescriptionOfTask}}</p>
         {{with .Attachments}}
-                <img src="{{index . 0 "url"}}" width="100%">
-                {{end}}
+            <img src="{{index . 0 "url"}}" width="100%">
+        {{end}}
         <h2>Offers</h2>
         {{$params := $.Scratch.Get "params"}}
         {{ partial "task/offers.html" (dict "data" . "params" $params)}}

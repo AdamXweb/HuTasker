@@ -60,7 +60,8 @@ RepoLicense = "https://github.com/AdamXweb/HuTasker/blob/main/LICENSE"
 RepoWiki = "https://github.com/AdamXweb/HuTasker/wiki"
 editPage = false
 
-
+# airtable
+AirtableEmbed = "https://airtable.com/embed/shrCcwZGJUVRv0MzP?backgroundColor=orange"
 [options]
   lazySizes = true
   instantPage = true

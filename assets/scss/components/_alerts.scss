@@ -13,6 +13,12 @@
 
 .alert .alert-link {
   text-decoration: underline;
+  color: $white;
+}
+.alert-primary a {
+  color: $white ;
+  text-decoration: underline;
+
 }
 
 .alert-dark {
@@ -21,7 +27,7 @@
 }
 
 .alert-dark .alert-link {
-  color: $white;
+  color: $white !important;
 }
 
 .alert-light {

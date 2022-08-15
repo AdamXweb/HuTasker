@@ -27,7 +27,9 @@ h6,
 @include media-breakpoint-up(md) {
   body {
     font-size: $font-size-md;
-    padding-top: 5.5rem !important;
+    padding-top: 4.7625rem !important;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   h1,

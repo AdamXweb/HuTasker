@@ -1,0 +1,63 @@
+{{ define "main" }}
+<div class="headerg">
+<h1>Welcome to the <span class="mt-0 h4 homeH1">example </span> page</h1>
+<p>{{.Params.description}}</p>
+</div>
+
+{{.Content}}
+<h2>Web elements</h2>
+<div class="row">
+  {{/*  Categories  */}}
+  <div><h3>Top 3 Categories</h3>
+  {{partial "categories/homebox.html" .}}
+  </div>
+  {{/*  Tasks  */}}
+  <div><h3>Task slider</h3>
+    {{partial "task/card-slider.html" .}}
+  </div>
+  <div><h3>Task widget</h3>
+    <div style="max-width:300px;margin-bottom:30px;">
+    <div class="card task-widget" id="task-detail-id">
+      <div class="card-body">
+          <h2 class="task-title" id="id">
+              TaskName</h2>
+              <ul class="task-specifics">
+                  <li>📍 Location</li>
+                  <li>🗓 Monday, Jan 2, 2006</li>
+              </ul>
+          <h3><small>Budget: </small>$Budget</h3>
+          <span class="badge bg-primary status">Status</span>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div><h3>Task Detail</h3>
+    <div>
+      <div class="row" style="max-width:400px">
+        <div class="col-md-10">
+        <h2>TaskName</h2>
+        <ul class="task-specifics">
+          
+            <li class="poster">Posted by Name <img src="#" class="img-thumbnail" alt="name's avatar">
+            </li>
+            <li>📍 Location </li>
+            <li>🗓 Monday, Jan 2, 2006</li>
+        </ul>
+        </div>
+        <div class="col-md-4 budget">
+            <h5>Task Budget</h5>
+            <h3>$Budget</h3>
+        </div>
+    </div>
+    <h3>Description of task:</h3>
+    <p>DescriptionOfTask</p>
+        <img src="/{{site.Params.schemaLogo}}" width="100%">
+    </div>
+
+  </div>
+  {{/*  Font  */}}
+  <div>
+    <h3 class="mt-0 h4 homeH1">Hero with font</h3>
+  </div>
+</div>
+{{end}}

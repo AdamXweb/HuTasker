@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{$URLpath := path.Join .Site.Params.api.baseid .Params.table .Params.view}}
+{{ $airtable := getJSON .Site.Params.api.url $URLpath (dict "Authorization" .Site.Params.api.key)  }}
+<h1>Acknowledgements</h1>
+{{.Content}}
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Note</th>
+      <th scope="col">Page on site</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{ range $airtable.records}}
+    <tr>
+      {{with .fields}}
+      <th scope="row">{{.Item}}</th>
+      <td>{{.Notes}}</td>
+      <td><a href="{{index . ("HuTasker Page")}}">{{index . ("HuTasker Page")}}</a></td>
+      {{end}}
+    </tr>
+    {{end}}
+  </tbody>
+</table>
+{{end}}
