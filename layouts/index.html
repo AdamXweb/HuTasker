@@ -68,13 +68,6 @@
 </section>
 {{end}}
 {{define "end-cta"}}
-<section class="section section-sm mb-5">
-  <div class="container text-center">
-    <h3 class="display-6">View the Wiki to get started</h3>
-    <a href="{{.Site.Params.RepoWiki}}"><img src="{{.Site.Params.schemaLogo}}" alt="HuTasker Logo" width="200px"></a>
-    </br>
-    <a href="{{.Site.Params.RepoWiki}}" class="btn btn-primary">View Wiki</a>
-      </div>
-</section>
+{{partial "main/end-cta.html" .}}
 {{end}}
 
