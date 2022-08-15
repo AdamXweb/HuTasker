@@ -24,6 +24,8 @@
     {{ block "task-lists" . }}{{ end }}
     {{ block "task-reviews" . }}{{ end }}
     {{ block "airtable-embed" . }}{{ end }}
+    {{ block "sample-categories" . }}{{ end }}
+    {{block "end-cta" .}}{{ end }}
     {{ partial "footer/footer.html" . }}
     {{ if and .IsHome .Site.Params.alert }}
     {{ partial "footer/alert.html" . }}
