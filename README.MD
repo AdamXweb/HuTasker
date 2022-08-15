@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-<i>HuTasker is a sample site showing potential for integration between AirTable & their API and Hugo, presented as a task tracker app</i>
+<i>HuTasker is a sample site showing potential for integration between AirTable's API and Hugo, presented as a task tracker app</i>
  <br/>
 </p>
 
@@ -37,7 +37,7 @@
 
 <details>
 <summary>
-<h2>Motivation 👩‍💻</h2>
+<h2>👩‍💻 Motivation</h2>
 </summary>
 Static Site Generators (SSG) have great potential to build a dynamic site minus a lot of javascript bloat. This makes them quick to load, hugely configurable and able to be hosted anywhere.
 
@@ -61,52 +61,35 @@ It doesn't really make sense in a real life application due to so many factors. 
 
 </details>
 
-## Features 🌈 
-- Pulls Data from AirTable's API on a CRON, that can populate the pages
-TBC Features viewable in the [Project tab.](https://github.com/users/AdamXweb/projects/1?query=is%3Aopen+sort%3Aupdated-desc). 
+## 🌈 Features 
+- Pulls Data from AirTable's API on a schedule (CRON with Github workflow), that can populate the pages
+- View the roadmap of features in the [Project tab.](https://github.com/users/AdamXweb/projects/1/views/2?query=is%3Aopen+sort%3Aupdated-desc). 
 
-## Getting Started 🚀
+## 🚀 Getting Started 
 For more in-depth information, [check out the wiki](https://github.com/AdamXweb/HuTasker/wiki)
 
-- Clone repo
-- npm install
-start app with
-- npm start
-### 1. Install Node
+- Clone [repo](https://github.com/AdamXweb/HuTasker.git)
+- Get a copy of the [AirTable data](https://airtable.com/shrCcwZGJUVRv0MzP/tblSHzrj6JvrCd070/viw5gDPSuXekYXbfR?blocks=hide)
+- Read the [HuTasker Wiki](https://github.com/adamxweb/hutasker/wiki) to get the project configured and up and running
 
-Download and install [Node.js](https://nodejs.org/) (it includes npm) for your platform.
-
-### 2. Install dependencies
-
-```bash
-npm install
-```
-
-### 3. Start development server
-
-```bash
-npm run start
-```
-
-## Documentation
-- [Hugo](https://gohugo.io/documentation/)
+## 📖 Documentation
 - [HuTasker](https://github.com/adamxweb/hutasker/wiki)
+- [Hugo](https://gohugo.io/documentation/)
 - [AirTable API](https://airtable.com/api)
 
-### Dependencies
-- [Airtable](https://airtable.com/) or [Referral link](https://airtable.com/invite/r/lottIZti)
-- Bootstrap
-- Mapbox
-
-## Demo Data ⚡
+### Demo Data ⚡
 View [sample data on Airtable](https://airtable.com/shrCcwZGJUVRv0MzP/tblSHzrj6JvrCd070/viw5gDPSuXekYXbfR?blocks=hide)
 
-# Future
-[creating pages](https://github.com/kidsil/hugo-data-to-pages)
+## Supporting this project
+You can support this project by sponsoring, or simply signing up with the Airtable Referral link below!
+- [Airtable Referral link](https://airtable.com/invite/r/lottIZti)
+
 
 # Acknowledgements
-CSV-Json
-data to pages
-Theme looseley based on h-enk's Doks
+See the [full list on the acknowledgements page](htps://hutasker.netlify.app)
 
 # Contributing
+See the [Contributing Guide](https://github.com/AdamXweb/HuTasker/blob/main/CONTRIBUTING.md)
+
+# LICENSE
+[MIT License](https://github.com/AdamXweb/HuTasker/blob/main/LICENSE)
