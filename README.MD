@@ -10,7 +10,7 @@
  <br/>
 </p>
 
-![hutaskerv0preview](https://user-images.githubusercontent.com/6800453/177792566-237ec386-6591-4aa2-8cb3-0d6e8df6e95a.gif)
+![hutasker-preview](https://user-images.githubusercontent.com/6800453/184602822-d7ec9503-b002-41a1-9822-627271399372.gif)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c8f91e29-d6d6-49a6-b610-ee248744b55a/deploy-status)](https://app.netlify.com/sites/hutasker/deploys)
 <a href="./LICENSE">
     <img src="https://img.shields.io/badge/License-MIT-0aa8d2?logo=opensourceinitiative&logoColor=fff" alt="License MIT">
