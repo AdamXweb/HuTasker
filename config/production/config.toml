@@ -1,4 +1,4 @@
-baseurl = "/public"
+baseurl = "/"
 canonifyURLs = false
 
 disableKinds = ["sitemap"]
