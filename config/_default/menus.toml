@@ -26,3 +26,8 @@
   name = "Privacy"
   url = "/privacy/"
   weight = 10
+
+[[footer]]
+  name = "Acknowledgements"
+  url = "/acknowledgements/"
+  weight = 11
