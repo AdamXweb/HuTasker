@@ -13,6 +13,7 @@
 
 .alert .alert-link {
   text-decoration: underline;
+  color: $white !important;
 }
 
 .alert-dark {
@@ -21,7 +22,7 @@
 }
 
 .alert-dark .alert-link {
-  color: $white;
+  color: $white !important;
 }
 
 .alert-light {
