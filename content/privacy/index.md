@@ -17,7 +17,9 @@ Git: Github
 
 CDN: Cloudflare
 
-Analytics: none
-
-
+Database: Airtable
 Data entered into the airtable form may be saved and used in our test environment.
+
+Analytics: Simpleanalytics
+
+

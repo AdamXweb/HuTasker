@@ -54,4 +54,5 @@
   {{ if .Site.Params.options.flexSearch -}}
     <script src="{{ $index.RelPermalink }}" integrity="{{ $index.Data.Integrity }}" crossorigin="anonymous" defer></script>
   {{ end -}}
+  {{ partial "footer/analytics.html"}}
 {{ end -}}
