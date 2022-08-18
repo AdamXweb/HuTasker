@@ -6,33 +6,45 @@ on:
 jobs:    
 
   Succinct-report:
-  uses: lowlighter/metrics@latest
-  with:
-    filename: static/metrics/pagespeed.svg
-    token: NOT_NEEDED
-    base: ""
-    plugin_pagespeed: yes
-    plugin_pagespeed_token: ${{ secrets.PAGESPEED_TOKEN }}
-    plugin_pagespeed_url: https://hutasket.netlify.app
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: static/metrics/pagespeed.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_pagespeed: yes
+          plugin_pagespeed_token: ${{ secrets.PAGESPEED_TOKEN }}
+          plugin_pagespeed_url: https://hutasket.netlify.app
 
   Detailed-report:
-  uses: lowlighter/metrics@latest
-  with:
-    filename: static/metrics/pagespeed.detailed.svg
-    token: NOT_NEEDED
-    base: ""
-    plugin_pagespeed: yes
-    plugin_pagespeed_detailed: yes
-    plugin_pagespeed_token: ${{ secrets.PAGESPEED_TOKEN }}
-    plugin_pagespeed_url: https://hutasket.netlify.app
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: static/metrics/pagespeed.detailed.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_pagespeed: yes
+          plugin_pagespeed_detailed: yes
+          plugin_pagespeed_token: ${{ secrets.PAGESPEED_TOKEN }}
+          plugin_pagespeed_url: https://hutasket.netlify.app
 
   screenshot:
-  uses: lowlighter/metrics@latest
-  with:
-    filename: static/metrics/pagespeed.screenshot.svg
-    token: NOT_NEEDED
-    base: ""
-    plugin_pagespeed: yes
-    plugin_pagespeed_screenshot: yes
-    plugin_pagespeed_token: ${{ secrets.PAGESPEED_TOKEN }}
-    plugin_pagespeed_url: https://hutasket.netlify.app
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          filename: static/metrics/pagespeed.screenshot.svg
+          token: NOT_NEEDED
+          base: ""
+          plugin_pagespeed: yes
+          plugin_pagespeed_screenshot: yes
+          plugin_pagespeed_token: ${{ secrets.PAGESPEED_TOKEN }}
+          plugin_pagespeed_url: https://hutasket.netlify.app
