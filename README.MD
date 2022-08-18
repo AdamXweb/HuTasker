@@ -18,7 +18,8 @@
  <a href="./.github/CHANGELOG.md">
     <img src="https://img.shields.io/github/package-json/version/adamxweb/hutasker?logo=azurepipelines&amp;color=0aa8d2" alt="Current Version">
   </a>
-
+  <br>
+![Speed](https://raw.githubusercontent.com/AdamXweb/HuTasker/main/static/metrics/pagespeed.svg)
   | :warning: | **HuTasker is currently in development and is not ready for production.** <br> We will post an update once it is ready for use as a template. &nbsp;&nbsp;&nbsp;&nbsp; |
 | - |:-|
 
