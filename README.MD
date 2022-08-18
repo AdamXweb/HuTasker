@@ -77,8 +77,12 @@ For more in-depth information, [check out the wiki](https://github.com/AdamXweb/
 - [Hugo](https://gohugo.io/documentation/)
 - [AirTable API](https://airtable.com/api)
 
-### Demo Data ⚡
+### 📀 Demo Data 
 View [sample data on Airtable](https://airtable.com/shrCcwZGJUVRv0MzP/tblSHzrj6JvrCd070/viw5gDPSuXekYXbfR?blocks=hide)
+
+### ⚡ Performance
+
+![Screenshot](https://raw.githubusercontent.com/AdamXweb/HuTasker/main/static/metrics/pagespeed.screenshot.svg)
 
 ## Supporting this project
 You can support this project by sponsoring, or simply signing up with the Airtable Referral link below!
@@ -86,7 +90,7 @@ You can support this project by sponsoring, or simply signing up with the Airtab
 
 
 # Acknowledgements
-See the [full list on the acknowledgements page](htps://hutasker.netlify.app)
+See the [full list on the acknowledgements page](https://hutasker.netlify.app/acknowledgements)
 
 # Contributing
 See the [Contributing Guide](https://github.com/AdamXweb/HuTasker/blob/main/CONTRIBUTING.md)
