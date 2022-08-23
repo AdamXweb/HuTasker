@@ -1,7 +1,7 @@
 name: 📊 Generates Metrics
 on:
   schedule:
-    - cron: '40 23 * * *' # Run every evening, twenty mins before midnight
+    - cron: '40 23 * * */4' # Run every evening, twenty mins before midnight
   workflow_dispatch: # Or when it's manually triggered
 jobs:    
 
